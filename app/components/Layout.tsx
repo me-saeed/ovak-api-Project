@@ -25,6 +25,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     { name: 'Patients', href: '/patients', icon: '👥' },
     { name: 'Appointments', href: '/appointments', icon: '📅' },
     { name: 'Encounters', href: '/encounters', icon: '🏥' },
+    { name: 'Conditions', href: '/conditions', icon: '💊' },
+    { name: 'Care Plans', href: '/careplans', icon: '📋' },
     { name: 'Observations', href: '/observations', icon: '📋' },
     { name: 'Questionnaires', href: '/questionnaires', icon: '📝' },
     { name: 'Documents', href: '/documents', icon: '📁' },

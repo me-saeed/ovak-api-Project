@@ -9,6 +9,8 @@ import { questionnaireService, QuestionnaireResponse } from '@/lib/services/ques
 import { appointmentService, Appointment } from '@/lib/services/appointment-service'
 import { encounterService, Encounter } from '@/lib/services/encounter-service'
 import { documentService, DocumentReference } from '@/lib/services/document-service'
+import { conditionService, Condition } from '@/lib/services/condition-service'
+import { carePlanService, CarePlan } from '@/lib/services/careplan-service'
 
 export default function PatientDetailPage() {
   const params = useParams()
@@ -21,6 +23,8 @@ export default function PatientDetailPage() {
   const [appointments, setAppointments] = useState<Appointment[]>([])
   const [encounters, setEncounters] = useState<Encounter[]>([])
   const [documents, setDocuments] = useState<DocumentReference[]>([])
+  const [conditions, setConditions] = useState<Condition[]>([])
+  const [carePlans, setCarePlans] = useState<CarePlan[]>([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -31,6 +35,8 @@ export default function PatientDetailPage() {
       loadAppointments()
       loadEncounters()
       loadDocuments()
+      loadConditions()
+      loadCarePlans()
     }
   }, [patientId])
 
@@ -87,6 +93,24 @@ export default function PatientDetailPage() {
       setDocuments(data)
     } catch (error) {
       console.error('Error loading documents:', error)
+    }
+  }
+
+  const loadConditions = async () => {
+    try {
+      const data = await conditionService.getByPatient(patientId)
+      setConditions(data)
+    } catch (error) {
+      console.error('Error loading conditions:', error)
+    }
+  }
+
+  const loadCarePlans = async () => {
+    try {
+      const data = await carePlanService.getByPatient(patientId)
+      setCarePlans(data)
+    } catch (error) {
+      console.error('Error loading care plans:', error)
     }
   }
 
@@ -494,6 +518,184 @@ export default function PatientDetailPage() {
             className="mt-4 inline-block text-sm text-blue-600 hover:text-blue-700 font-medium"
           >
             View all documents →
+          </Link>
+        </div>
+
+        {/* Conditions */}
+        <div className="bg-white rounded-lg shadow-sm p-6">
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center gap-2">
+              <span className="text-2xl">💊</span>
+              <h2 className="text-lg font-semibold text-gray-900">Conditions</h2>
+            </div>
+            <Link
+              href={`/conditions/new?patientId=${patientId}`}
+              className="text-sm text-blue-600 hover:text-blue-700 font-medium flex items-center gap-1"
+            >
+              <span>➕</span> Record Condition
+            </Link>
+          </div>
+          {conditions.length > 0 ? (
+            <div className="space-y-3">
+              {conditions.slice(0, 5).map((condition) => {
+                const status = condition.clinicalStatus?.coding?.[0]?.code || condition.clinicalStatus?.text || 'unknown'
+                const getStatusColor = (status: string) => {
+                  switch (status.toLowerCase()) {
+                    case 'active':
+                      return 'border-red-500 bg-red-50'
+                    case 'resolved':
+                      return 'border-green-500 bg-green-50'
+                    case 'remission':
+                      return 'border-yellow-500 bg-yellow-50'
+                    default:
+                      return 'border-gray-500 bg-gray-50'
+                  }
+                }
+                return (
+                  <Link
+                    key={condition.id}
+                    href={`/conditions/${condition.id}`}
+                    className={`block p-3 rounded-lg border-l-4 hover:opacity-80 transition ${getStatusColor(status)}`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-start gap-2 flex-1">
+                        <span className="text-lg mt-0.5">🏥</span>
+                        <div className="flex-1">
+                          <p className="text-sm font-medium text-gray-900">
+                            {condition.code?.text || condition.code?.coding?.[0]?.display || 'Condition'}
+                          </p>
+                          <p className="text-xs text-gray-600 mt-1">
+                            <span className={`px-2 py-0.5 rounded text-xs font-medium ${
+                              status === 'active' ? 'bg-red-100 text-red-800' :
+                              status === 'resolved' ? 'bg-green-100 text-green-800' :
+                              'bg-gray-100 text-gray-800'
+                            }`}>
+                              {condition.clinicalStatus?.coding?.[0]?.display || condition.clinicalStatus?.text || 'Unknown'}
+                            </span>
+                            {condition.severity && (
+                              <span className="ml-2 px-2 py-0.5 rounded text-xs bg-orange-100 text-orange-800">
+                                {condition.severity.coding?.[0]?.display || condition.severity.text}
+                              </span>
+                            )}
+                            {condition.onsetDateTime && (
+                              <span className="ml-2">
+                                Onset: {new Date(condition.onsetDateTime).toLocaleDateString()}
+                              </span>
+                            )}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-blue-600 text-xl">→</span>
+                    </div>
+                  </Link>
+                )
+              })}
+            </div>
+          ) : (
+            <div className="text-center py-6">
+              <span className="text-4xl block mb-2">💊</span>
+              <p className="text-gray-500 text-sm">No conditions recorded</p>
+            </div>
+          )}
+          <Link
+            href={`/conditions?patientId=${patientId}`}
+            className="mt-4 inline-block text-sm text-blue-600 hover:text-blue-700 font-medium"
+          >
+            View all conditions →
+          </Link>
+        </div>
+
+        {/* Care Plans */}
+        <div className="bg-white rounded-lg shadow-sm p-6">
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center gap-2">
+              <span className="text-2xl">📋</span>
+              <h2 className="text-lg font-semibold text-gray-900">Care Plans</h2>
+            </div>
+            <Link
+              href={`/careplans/new?patientId=${patientId}`}
+              className="text-sm text-blue-600 hover:text-blue-700 font-medium flex items-center gap-1"
+            >
+              <span>➕</span> Create Care Plan
+            </Link>
+          </div>
+          {carePlans.length > 0 ? (
+            <div className="space-y-3">
+              {carePlans.slice(0, 5).map((carePlan) => {
+                const getStatusColor = (status?: string) => {
+                  switch (status?.toLowerCase()) {
+                    case 'active':
+                      return 'border-green-500 bg-green-50'
+                    case 'completed':
+                      return 'border-blue-500 bg-blue-50'
+                    case 'on-hold':
+                      return 'border-yellow-500 bg-yellow-50'
+                    default:
+                      return 'border-gray-500 bg-gray-50'
+                  }
+                }
+                return (
+                  <Link
+                    key={carePlan.id}
+                    href={`/careplans/${carePlan.id}`}
+                    className={`block p-3 rounded-lg border-l-4 hover:opacity-80 transition ${getStatusColor(carePlan.status)}`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-start gap-2 flex-1">
+                        <span className="text-lg mt-0.5">📋</span>
+                        <div className="flex-1">
+                          <p className="text-sm font-medium text-gray-900">
+                            {carePlan.title || 'Untitled Care Plan'}
+                          </p>
+                          <p className="text-xs text-gray-600 mt-1">
+                            <span className={`px-2 py-0.5 rounded text-xs font-medium ${
+                              carePlan.status === 'active' ? 'bg-green-100 text-green-800' :
+                              carePlan.status === 'completed' ? 'bg-blue-100 text-blue-800' :
+                              carePlan.status === 'on-hold' ? 'bg-yellow-100 text-yellow-800' :
+                              'bg-gray-100 text-gray-800'
+                            }`}>
+                              {carePlan.status || 'Unknown'}
+                            </span>
+                            {carePlan.note && (() => {
+                              const goalCount = carePlan.note.filter(note => 
+                                note.text && note.text.match(/^Goal \d+:/i)
+                              ).length
+                              return goalCount > 0 ? (
+                                <span className="ml-2">
+                                  {goalCount} {goalCount === 1 ? 'goal' : 'goals'}
+                                </span>
+                              ) : null
+                            })()}
+                            {carePlan.activity && carePlan.activity.length > 0 && (
+                              <span className="ml-2">
+                                {carePlan.activity.length} {carePlan.activity.length === 1 ? 'activity' : 'activities'}
+                              </span>
+                            )}
+                            {carePlan.period?.start && (
+                              <span className="ml-2">
+                                Started: {new Date(carePlan.period.start).toLocaleDateString()}
+                              </span>
+                            )}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-blue-600 text-xl">→</span>
+                    </div>
+                  </Link>
+                )
+              })}
+            </div>
+          ) : (
+            <div className="text-center py-6">
+              <span className="text-4xl block mb-2">📋</span>
+              <p className="text-gray-500 text-sm">No care plans created</p>
+            </div>
+          )}
+          <Link
+            href={`/careplans?patientId=${patientId}`}
+            className="mt-4 inline-block text-sm text-blue-600 hover:text-blue-700 font-medium"
+          >
+            View all care plans →
           </Link>
         </div>
       </div>

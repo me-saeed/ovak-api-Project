@@ -62,6 +62,20 @@ export default function DashboardPage() {
       href: '/encounters',
     },
     {
+      title: 'Conditions',
+      value: stats.totalConditions,
+      icon: '💊',
+      color: 'bg-red-500',
+      href: '/conditions',
+    },
+    {
+      title: 'Care Plans',
+      value: stats.totalCarePlans,
+      icon: '📋',
+      color: 'bg-teal-500',
+      href: '/careplans',
+    },
+    {
       title: 'Observations',
       value: stats.totalObservations,
       icon: '📋',
@@ -265,6 +279,153 @@ export default function DashboardPage() {
             className="mt-4 inline-block text-sm text-blue-600 hover:text-blue-700 font-medium"
           >
             View all encounters →
+          </Link>
+        </div>
+
+        {/* Recent Conditions */}
+        <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="text-2xl">💊</span>
+            <h2 className="text-lg font-semibold text-gray-900">Recent Conditions</h2>
+          </div>
+          {stats.recentConditions.length > 0 ? (
+            <div className="space-y-3">
+              {stats.recentConditions.map((condition: any) => {
+                const status = condition.clinicalStatus?.coding?.[0]?.code || condition.clinicalStatus?.text || 'unknown'
+                const getStatusColor = (status: string) => {
+                  switch (status.toLowerCase()) {
+                    case 'active':
+                      return 'border-red-500 bg-red-50'
+                    case 'resolved':
+                      return 'border-green-500 bg-green-50'
+                    case 'remission':
+                      return 'border-yellow-500 bg-yellow-50'
+                    default:
+                      return 'border-gray-500 bg-gray-50'
+                  }
+                }
+                return (
+                  <Link
+                    key={condition.id}
+                    href={`/conditions/${condition.id}`}
+                    className={`block p-3 rounded-lg hover:opacity-80 transition border-l-4 ${getStatusColor(status)}`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <p className="font-medium text-gray-900 text-sm">
+                          {condition.code?.text || condition.code?.coding?.[0]?.display || 'Condition'}
+                        </p>
+                        <p className="text-xs text-gray-600 mt-1">
+                          <span className={`px-2 py-0.5 rounded text-xs font-medium ${
+                            status === 'active' ? 'bg-red-100 text-red-800' :
+                            status === 'resolved' ? 'bg-green-100 text-green-800' :
+                            'bg-gray-100 text-gray-800'
+                          }`}>
+                            {condition.clinicalStatus?.coding?.[0]?.display || condition.clinicalStatus?.text || 'Unknown'}
+                          </span>
+                          {condition.onsetDateTime && (
+                            <span className="ml-2">
+                              Onset: {formatDate(condition.onsetDateTime)}
+                            </span>
+                          )}
+                        </p>
+                      </div>
+                      <span className="text-red-600 text-xl">→</span>
+                    </div>
+                  </Link>
+                )
+              })}
+            </div>
+          ) : (
+            <div className="text-center py-6">
+              <span className="text-4xl block mb-2">📭</span>
+              <p className="text-gray-500 text-sm">No recent conditions</p>
+            </div>
+          )}
+          <Link
+            href="/conditions"
+            className="mt-4 inline-block text-sm text-blue-600 hover:text-blue-700 font-medium"
+          >
+            View all conditions →
+          </Link>
+        </div>
+
+        {/* Recent Care Plans */}
+        <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="text-2xl">📋</span>
+            <h2 className="text-lg font-semibold text-gray-900">Recent Care Plans</h2>
+          </div>
+          {stats.recentCarePlans.length > 0 ? (
+            <div className="space-y-3">
+              {stats.recentCarePlans.map((carePlan: any) => {
+                const status = carePlan.status || 'unknown'
+                const getStatusColor = (status: string) => {
+                  switch (status.toLowerCase()) {
+                    case 'active':
+                      return 'border-green-500 bg-green-50'
+                    case 'completed':
+                      return 'border-blue-500 bg-blue-50'
+                    case 'on-hold':
+                      return 'border-yellow-500 bg-yellow-50'
+                    default:
+                      return 'border-gray-500 bg-gray-50'
+                  }
+                }
+                return (
+                  <Link
+                    key={carePlan.id}
+                    href={`/careplans/${carePlan.id}`}
+                    className={`block p-3 rounded-lg hover:opacity-80 transition border-l-4 ${getStatusColor(status)}`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <p className="font-medium text-gray-900 text-sm">
+                          {carePlan.title || 'Untitled Care Plan'}
+                        </p>
+                        <p className="text-xs text-gray-600 mt-1">
+                          <span className={`px-2 py-0.5 rounded text-xs font-medium ${
+                            status === 'active' ? 'bg-green-100 text-green-800' :
+                            status === 'completed' ? 'bg-blue-100 text-blue-800' :
+                            status === 'on-hold' ? 'bg-yellow-100 text-yellow-800' :
+                            'bg-gray-100 text-gray-800'
+                          }`}>
+                            {status}
+                          </span>
+                          {carePlan.note && (() => {
+                            const goalCount = carePlan.note.filter(note => 
+                              note.text && note.text.match(/^Goal \d+:/i)
+                            ).length
+                            return goalCount > 0 ? (
+                              <span className="ml-2">
+                                {goalCount} {goalCount === 1 ? 'goal' : 'goals'}
+                              </span>
+                            ) : null
+                          })()}
+                          {carePlan.period?.start && (
+                            <span className="ml-2">
+                              Started: {formatDate(carePlan.period.start)}
+                            </span>
+                          )}
+                        </p>
+                      </div>
+                      <span className="text-teal-600 text-xl">→</span>
+                    </div>
+                  </Link>
+                )
+              })}
+            </div>
+          ) : (
+            <div className="text-center py-6">
+              <span className="text-4xl block mb-2">📭</span>
+              <p className="text-gray-500 text-sm">No recent care plans</p>
+            </div>
+          )}
+          <Link
+            href="/careplans"
+            className="mt-4 inline-block text-sm text-blue-600 hover:text-blue-700 font-medium"
+          >
+            View all care plans →
           </Link>
         </div>
 
