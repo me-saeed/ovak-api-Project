@@ -1,0 +1,1127 @@
+{
+  "summary": {
+    "passed": 15,
+    "failed": 8,
+    "skipped": 0,
+    "duration": "22.18s",
+    "timestamp": "2025-11-15T12:29:39.608Z"
+  },
+  "tokens": {
+    "standard": "✗",
+    "practitioner": "✓",
+    "patient": "✗"
+  },
+  "passed": [
+    {
+      "name": "POST /auth/tenant/Practitioner/login/start (with PKCE)",
+      "timestamp": "2025-11-15T12:29:18.983Z",
+      "success": true,
+      "status": 201,
+      "data": {
+        "nextStep": "token",
+        "sessionCode": "i8bk6kxiskteavpw81k2uqci0x9czhktyj2ryyn79tmxaxoe2zf2qdrws15k6tnl",
+        "profiles": [
+          {
+            "tenantCode": "encodersoft",
+            "project": {
+              "id": "019a785d-ac1a-76a8-bb78-48f65b227809",
+              "resourceType": "Project",
+              "name": "encodersoft"
+            },
+            "profile": {
+              "resourceType": "Practitioner",
+              "name": [
+                {
+                  "given": [
+                    "Muhammad"
+                  ],
+                  "family": "Saeed"
+                }
+              ],
+              "telecom": [
+                {
+                  "system": "email",
+                  "value": "saeedartists@gmail.com",
+                  "use": "work"
+                }
+              ],
+              "meta": {
+                "project": "019a785d-ac1a-76a8-bb78-48f65b227809",
+                "compartment": [
+                  {
+                    "reference": "Project/019a785d-ac1a-76a8-bb78-48f65b227809"
+                  }
+                ],
+                "versionId": "019a785d-b360-73fc-8d48-6bbbee9b12c5",
+                "lastUpdated": "2025-11-12T13:59:58.048Z",
+                "author": {
+                  "reference": "ClientApplication/bfb8d41f-4244-42df-a4ae-b116bd02e9ce",
+                  "display": "Admin"
+                }
+              },
+              "id": "019a785d-b35f-76e0-94bc-ce23532634ce"
+            }
+          }
+        ]
+      },
+      "headers": {
+        "date": "Sat, 15 Nov 2025 12:29:18 GMT",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "782",
+        "connection": "keep-alive",
+        "x-powered-by": "Express",
+        "access-control-allow-origin": "https://api.ovok.com",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "x-ovok-git-commit-hash": "fd83396",
+        "x-ovok-version": "2025.10.21",
+        "x-ovok-build-date": "2025-10-21T15:05:11Z",
+        "x-ovok-running-since": "2025-11-12T15:14:51.404Z",
+        "x-request-id": "2b564c33-b685-4c61-b667-6db73f10620a",
+        "x-trace-id": "4a4d8aac-975e-469b-81fe-6b94df20edd0",
+        "x-ratelimit-limit": "1000",
+        "x-ratelimit-remaining": "998",
+        "x-ratelimit-reset": "1763269758",
+        "etag": "W/\"30e-ry8Ivi3CdEQgYzLJ9rOdkuOohOw\""
+      }
+    },
+    {
+      "name": "POST /auth/tenant/Practitioner/login/token (attempt 3)",
+      "timestamp": "2025-11-15T12:29:22.206Z",
+      "success": true,
+      "status": 201,
+      "data": {
+        "accessToken": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjAxM2IxZWZiLWFiZGQtNDAxNS05MTA0LTgwODQyMTY3ZDllOSIsInR5cCI6IkpXVCJ9.eyJsb2dpbl9pZCI6IjAxOWE4NzdkLWM4NmYtNzU5Yy04ZTlkLTRkNmIxNDA1MzRiNCIsInN1YiI6IjAxOWE3ODVkLWI0NDMtNzMxNi1iOTc0LTkzOTBjMTY1ZTUwMiIsInVzZXJuYW1lIjoiMDE5YTc4NWQtYjQ0My03MzE2LWI5NzQtOTM5MGMxNjVlNTAyIiwic2NvcGUiOiJvcGVuaWQiLCJwcm9maWxlIjoiUHJhY3RpdGlvbmVyLzAxOWE3ODVkLWIzNWYtNzZlMC05NGJjLWNlMjM1MzI2MzRjZSIsImlhdCI6MTc2MzIwOTc2MSwiaXNzIjoiaHR0cHM6Ly9maGlyLm92b2suY29tLyIsImV4cCI6MTc2MzIxMzM2MX0.c2YIY1TizcXBxluG_WESAzBwtJYkBov0SObuZ4B9j_lQWdhwOs2Ew4mUNsh7nf1lOy1LXVI7yVokYdgur-YoW8-KmzedVv7t0TbKHpOakwzupgFRPUOuUckv5Tj75zC_ClTfTT0ctjAH25CDuv75XNK7KIHt_wp31oVwyI2qh38Vb60dMP81tbCQ_LjXchjycPTP-Jbx2AlIlh896hepzbzgqFGXpwMqN8GkkAMw74wLSdxlN4EazCl7i7zwVa4zjWektHoy4FB3YIh7vH3TwpFpV098z2FpR8-K4Drv4ZeiJQMhhfZQ7cemUOvHeiQmnqhAIKmqiSU7PFPdDc5JqQ",
+        "refreshToken": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjAxM2IxZWZiLWFiZGQtNDAxNS05MTA0LTgwODQyMTY3ZDllOSIsInR5cCI6IkpXVCJ9.eyJsb2dpbl9pZCI6IjAxOWE4NzdkLWM4NmYtNzU5Yy04ZTlkLTRkNmIxNDA1MzRiNCIsInJlZnJlc2hfc2VjcmV0IjoiYzA4bTkzdzE0a3hsMm03M3d3dHNvbXRmN3d2d3dsc3pwbzVkcDVlbzM0NjVyYmpoY29yNWswZGZiZDl5OW5raCIsImlhdCI6MTc2MzIwOTc2MSwiaXNzIjoiaHR0cHM6Ly9maGlyLm92b2suY29tLyIsImV4cCI6MTc2NDQxOTM2MX0.C2W_HgG_M-lyZrIQ1EIPT8Z39fBM1-xhizgisc1q7wQqDIDdnRayhtpjQcOKg9pdkBZasd6Two7DllmGd0NdybxBkhu37YlMzDIOSbqPOodMOS3iN4eAsoAckgRTcH4PvgAPwy5cIhbHkvRSC9UlVNw0DeQT-C6TZkjfQBhT7VsYOYrwAcQVN1V1txj8FbOXoPtyhG2cIIbsrlOj0OSh0baFgv0ji6aJPR_xEfFBgT72EzQNV-fT6rNEyRmKVGdgXycvh5-EJylKYLoP78iqyDgz_3zjzCiSCbSlcdl18UghuBpHUfd_T2b2K0DLFkmWObtX4PWx38_izMTfDHwRqw",
+        "project": {
+          "reference": "Project/019a785d-ac1a-76a8-bb78-48f65b227809",
+          "display": "encodersoft"
+        },
+        "profile": {
+          "reference": "Practitioner/019a785d-b35f-76e0-94bc-ce23532634ce",
+          "display": "Muhammad Saeed"
+        },
+        "expiresIn": 3600
+      },
+      "headers": {
+        "date": "Sat, 15 Nov 2025 12:29:22 GMT",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "1785",
+        "connection": "keep-alive",
+        "x-powered-by": "Express",
+        "access-control-allow-origin": "https://api.ovok.com",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "x-ovok-git-commit-hash": "fd83396",
+        "x-ovok-version": "2025.10.21",
+        "x-ovok-build-date": "2025-10-21T15:05:11Z",
+        "x-ovok-running-since": "2025-11-12T15:14:51.404Z",
+        "x-request-id": "a652277c-2bd0-4cb3-b630-caaa42648887",
+        "x-trace-id": "c8d455f5-8d61-4c61-a91f-5f16331941c2",
+        "x-ratelimit-limit": "1000",
+        "x-ratelimit-remaining": "993",
+        "x-ratelimit-reset": "1763269761",
+        "etag": "W/\"6f9-is672Q2J4DWg5t03WfiLLQ6w8oo\""
+      }
+    },
+    {
+      "name": "GET /fhir/Patient",
+      "timestamp": "2025-11-15T12:29:28.461Z",
+      "success": true,
+      "status": 200,
+      "data": {
+        "resourceType": "Bundle",
+        "type": "searchset",
+        "link": [
+          {
+            "relation": "self",
+            "url": "https://fhir.ovok.com/fhir/R4/Patient?_count=20"
+          }
+        ]
+      },
+      "headers": {
+        "date": "Sat, 15 Nov 2025 12:29:28 GMT",
+        "content-type": "application/fhir+json; charset=utf-8",
+        "content-length": "129",
+        "connection": "keep-alive",
+        "x-powered-by": "Express",
+        "access-control-allow-origin": "https://api.ovok.com",
+        "vary": "Accept-Encoding",
+        "access-control-allow-credentials": "true",
+        "x-ovok-git-commit-hash": "fd83396",
+        "x-ovok-version": "2025.10.21",
+        "x-ovok-build-date": "2025-10-21T15:05:11Z",
+        "x-ovok-running-since": "2025-11-12T15:14:51.404Z",
+        "x-request-id": "520fe6bd-412c-4b24-9a3e-8d7c0a7dd3eb",
+        "x-trace-id": "3dd71e5b-5ccc-4907-b3f7-61a64164fc2f",
+        "x-ratelimit-limit": "1000",
+        "x-ratelimit-remaining": "999",
+        "x-ratelimit-reset": "1763239766",
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "pragma": "no-cache",
+        "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+        "content-security-policy": "default-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none';",
+        "permissions-policy": "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=(), interest-cohort=()",
+        "referrer-policy": "no-referrer",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-xss-protection": "1; mode=block",
+        "ratelimit": "\"requests\";r=59931;t=16, \"fhirInteractions\";r=49980;t=60",
+        "etag": "W/\"81-MAErl25KvYJaw4S56Oh8mI0zp+4\""
+      }
+    },
+    {
+      "name": "GET /fhir/Practitioner",
+      "timestamp": "2025-11-15T12:29:29.262Z",
+      "success": true,
+      "status": 200,
+      "data": {
+        "resourceType": "Bundle",
+        "type": "searchset",
+        "entry": [
+          {
+            "fullUrl": "https://fhir.ovok.com/fhir/R4/Practitioner/019a785d-b35f-76e0-94bc-ce23532634ce",
+            "search": {
+              "mode": "match"
+            },
+            "resource": {
+              "resourceType": "Practitioner",
+              "name": [
+                {
+                  "given": [
+                    "Muhammad"
+                  ],
+                  "family": "Saeed"
+                }
+              ],
+              "telecom": [
+                {
+                  "system": "email",
+                  "value": "saeedartists@gmail.com",
+                  "use": "work"
+                }
+              ],
+              "meta": {
+                "versionId": "019a785d-b360-73fc-8d48-6bbbee9b12c5",
+                "lastUpdated": "2025-11-12T13:59:58.048Z"
+              },
+              "id": "019a785d-b35f-76e0-94bc-ce23532634ce"
+            }
+          },
+          {
+            "fullUrl": "https://fhir.ovok.com/fhir/R4/Practitioner/019a824f-05aa-7119-a079-e4bdf492fa11",
+            "search": {
+              "mode": "match"
+            },
+            "resource": {
+              "resourceType": "Practitioner",
+              "identifier": [
+                {
+                  "system": "dsfs",
+                  "value": "dsfs"
+                }
+              ],
+              "active": true,
+              "name": [
+                {
+                  "use": "official",
+                  "prefix": [
+                    "saeed"
+                  ],
+                  "given": [
+                    "adsa"
+                  ],
+                  "family": "sadas",
+                  "suffix": [
+                    "sad"
+                  ]
+                }
+              ],
+              "gender": "female",
+              "photo": [
+                {
+                  "contentType": "image/png",
+                  "url": "https://storage.ovok.com/binary/019a824e-f056-727d-b864-bebebb7597f8/019a824e-f056-727d-b864-c0f55f82d07f?Expires=1763213369&Key-Pair-Id=KLIL596BY234E&Signature=TI7W8pU0545pHgIe64g1f3Yq4Zpy8bhlaCidKKHRjJJ0enKwe26l6C2dwzf4KP8WTC2fZCUTXIf-kDflDmiBhQcRLjRJ7G6snnC6sWSgzrhoW8WQ9NAisBRjv-KHC9AOReTULy5LukcXwkxGtscIRS4xyNth3vPjmGMjw4029EHttB6-L4H~~qQIw1fGeWoanl-lxeMcNsQrFOVd3pR0Co82zq4e7PmXe02sQ2cBM5MSUIgT8EN7OXnm8UwHZN5SJq0UR~2~ttq~iai-34Hh01TEynfV6tPltOsXZ4pA00BzqEj18eVyRjbZbsweY95gwB2g9l~PyqcTiu9-IrX0sg__",
+                  "title": "IMG_7491 (2) (1).PNG"
+                }
+              ],
+              "id": "019a824f-05aa-7119-a079-e4bdf492fa11",
+              "meta": {
+                "versionId": "019a824f-763f-719a-81be-4e9e641a867f",
+                "lastUpdated": "2025-11-14T12:20:37.055Z"
+              }
+            }
+          }
+        ],
+        "link": [
+          {
+            "relation": "self",
+            "url": "https://fhir.ovok.com/fhir/R4/Practitioner?_count=20"
+          },
+          {
+            "relation": "first",
+            "url": "https://fhir.ovok.com/fhir/R4/Practitioner?_count=20"
+          }
+        ]
+      },
+      "headers": {
+        "date": "Sat, 15 Nov 2025 12:29:29 GMT",
+        "content-type": "application/fhir+json; charset=utf-8",
+        "content-length": "955",
+        "connection": "keep-alive",
+        "x-powered-by": "Express",
+        "access-control-allow-origin": "https://api.ovok.com",
+        "vary": "Accept-Encoding",
+        "access-control-allow-credentials": "true",
+        "x-ovok-git-commit-hash": "fd83396",
+        "x-ovok-version": "2025.10.21",
+        "x-ovok-build-date": "2025-10-21T15:05:11Z",
+        "x-ovok-running-since": "2025-11-12T15:14:51.112Z",
+        "x-request-id": "59b6af26-ffcf-41a3-9c2c-7ff620fcc1e6",
+        "x-trace-id": "b3f0d657-13ec-4967-b285-cefa4369ddfe",
+        "x-ratelimit-limit": "1000",
+        "x-ratelimit-remaining": "999",
+        "x-ratelimit-reset": "1763239768",
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "pragma": "no-cache",
+        "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+        "content-security-policy": "default-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none';",
+        "permissions-policy": "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=(), interest-cohort=()",
+        "referrer-policy": "no-referrer",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-xss-protection": "1; mode=block",
+        "ratelimit": "\"requests\";r=59919;t=15, \"fhirInteractions\";r=49959;t=60",
+        "etag": "W/\"3bb-/GBpRcb3OC9tneaJkHbMOFURS6s\""
+      }
+    },
+    {
+      "name": "GET /fhir/Observation",
+      "timestamp": "2025-11-15T12:29:29.956Z",
+      "success": true,
+      "status": 200,
+      "data": {
+        "resourceType": "Bundle",
+        "type": "searchset",
+        "link": [
+          {
+            "relation": "self",
+            "url": "https://fhir.ovok.com/fhir/R4/Observation?_count=20"
+          }
+        ]
+      },
+      "headers": {
+        "date": "Sat, 15 Nov 2025 12:29:29 GMT",
+        "content-type": "application/fhir+json; charset=utf-8",
+        "content-length": "133",
+        "connection": "keep-alive",
+        "x-powered-by": "Express",
+        "access-control-allow-origin": "https://api.ovok.com",
+        "vary": "Accept-Encoding",
+        "access-control-allow-credentials": "true",
+        "x-ovok-git-commit-hash": "fd83396",
+        "x-ovok-version": "2025.10.21",
+        "x-ovok-build-date": "2025-10-21T15:05:11Z",
+        "x-ovok-running-since": "2025-11-12T15:14:51.112Z",
+        "x-request-id": "d6a25914-30b6-47d1-b15f-0f926d6286f8",
+        "x-trace-id": "4b265fa7-1d4b-4271-b972-20fece3b1744",
+        "x-ratelimit-limit": "1000",
+        "x-ratelimit-remaining": "998",
+        "x-ratelimit-reset": "1763239769",
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "pragma": "no-cache",
+        "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+        "content-security-policy": "default-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none';",
+        "permissions-policy": "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=(), interest-cohort=()",
+        "referrer-policy": "no-referrer",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-xss-protection": "1; mode=block",
+        "ratelimit": "\"requests\";r=59908;t=14, \"fhirInteractions\";r=49939;t=59",
+        "etag": "W/\"85-ZMxcHV2Z+F2yn4+YUQYeIU06DV4\""
+      }
+    },
+    {
+      "name": "GET /fhir/Encounter",
+      "timestamp": "2025-11-15T12:29:30.652Z",
+      "success": true,
+      "status": 200,
+      "data": {
+        "resourceType": "Bundle",
+        "type": "searchset",
+        "link": [
+          {
+            "relation": "self",
+            "url": "https://fhir.ovok.com/fhir/R4/Encounter?_count=20"
+          }
+        ]
+      },
+      "headers": {
+        "date": "Sat, 15 Nov 2025 12:29:30 GMT",
+        "content-type": "application/fhir+json; charset=utf-8",
+        "content-length": "131",
+        "connection": "keep-alive",
+        "x-powered-by": "Express",
+        "access-control-allow-origin": "https://api.ovok.com",
+        "vary": "Accept-Encoding",
+        "access-control-allow-credentials": "true",
+        "x-ovok-git-commit-hash": "fd83396",
+        "x-ovok-version": "2025.10.21",
+        "x-ovok-build-date": "2025-10-21T15:05:11Z",
+        "x-ovok-running-since": "2025-11-12T15:14:51.404Z",
+        "x-request-id": "50889f71-9f4a-44fc-b3fb-4b2a358ac4ca",
+        "x-trace-id": "9aaa869d-b2d8-4466-b03b-0aebe40a6bcc",
+        "x-ratelimit-limit": "1000",
+        "x-ratelimit-remaining": "998",
+        "x-ratelimit-reset": "1763239770",
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "pragma": "no-cache",
+        "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+        "content-security-policy": "default-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none';",
+        "permissions-policy": "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=(), interest-cohort=()",
+        "referrer-policy": "no-referrer",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-xss-protection": "1; mode=block",
+        "ratelimit": "\"requests\";r=59902;t=14, \"fhirInteractions\";r=49919;t=58",
+        "etag": "W/\"83-kniANM8lVNXg0/p8w3EBy/MXL14\""
+      }
+    },
+    {
+      "name": "GET /fhir/Appointment",
+      "timestamp": "2025-11-15T12:29:31.482Z",
+      "success": true,
+      "status": 200,
+      "data": {
+        "resourceType": "Bundle",
+        "type": "searchset",
+        "link": [
+          {
+            "relation": "self",
+            "url": "https://fhir.ovok.com/fhir/R4/Appointment?_count=20"
+          }
+        ]
+      },
+      "headers": {
+        "date": "Sat, 15 Nov 2025 12:29:31 GMT",
+        "content-type": "application/fhir+json; charset=utf-8",
+        "content-length": "133",
+        "connection": "keep-alive",
+        "x-powered-by": "Express",
+        "access-control-allow-origin": "https://api.ovok.com",
+        "vary": "Accept-Encoding",
+        "access-control-allow-credentials": "true",
+        "x-ovok-git-commit-hash": "fd83396",
+        "x-ovok-version": "2025.10.21",
+        "x-ovok-build-date": "2025-10-21T15:05:11Z",
+        "x-ovok-running-since": "2025-11-12T15:14:51.404Z",
+        "x-request-id": "b0187df0-451b-4399-a4ac-e8b497c20347",
+        "x-trace-id": "5c56ebfa-01e0-4e8d-907d-6e075011e4dc",
+        "x-ratelimit-limit": "1000",
+        "x-ratelimit-remaining": "997",
+        "x-ratelimit-reset": "1763239771",
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "pragma": "no-cache",
+        "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+        "content-security-policy": "default-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none';",
+        "permissions-policy": "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=(), interest-cohort=()",
+        "referrer-policy": "no-referrer",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-xss-protection": "1; mode=block",
+        "ratelimit": "\"requests\";r=59893;t=13, \"fhirInteractions\";r=49899;t=57",
+        "etag": "W/\"85-mk6gMoBfZTJ5YKVNoMdL0udmCHc\""
+      }
+    },
+    {
+      "name": "GET /fhir/Questionnaire",
+      "timestamp": "2025-11-15T12:29:32.032Z",
+      "success": true,
+      "status": 200,
+      "data": {
+        "resourceType": "Bundle",
+        "type": "searchset",
+        "link": [
+          {
+            "relation": "self",
+            "url": "https://fhir.ovok.com/fhir/R4/Questionnaire?_count=20"
+          }
+        ]
+      },
+      "headers": {
+        "date": "Sat, 15 Nov 2025 12:29:32 GMT",
+        "content-type": "application/fhir+json; charset=utf-8",
+        "content-length": "135",
+        "connection": "keep-alive",
+        "x-powered-by": "Express",
+        "access-control-allow-origin": "https://api.ovok.com",
+        "vary": "Accept-Encoding",
+        "access-control-allow-credentials": "true",
+        "x-ovok-git-commit-hash": "fd83396",
+        "x-ovok-version": "2025.10.21",
+        "x-ovok-build-date": "2025-10-21T15:05:11Z",
+        "x-ovok-running-since": "2025-11-12T15:14:51.112Z",
+        "x-request-id": "62de210d-cfd1-4639-bf56-c96470b57725",
+        "x-trace-id": "1c211f28-62dc-40a7-8cfd-4ec10865251b",
+        "x-ratelimit-limit": "1000",
+        "x-ratelimit-remaining": "997",
+        "x-ratelimit-reset": "1763239772",
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "pragma": "no-cache",
+        "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+        "content-security-policy": "default-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none';",
+        "permissions-policy": "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=(), interest-cohort=()",
+        "referrer-policy": "no-referrer",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-xss-protection": "1; mode=block",
+        "ratelimit": "\"requests\";r=59891;t=12, \"fhirInteractions\";r=49879;t=57",
+        "etag": "W/\"87-c5WLpJPY4G/h+VQc1yEHU6igguo\""
+      }
+    },
+    {
+      "name": "GET /fhir/QuestionnaireResponse",
+      "timestamp": "2025-11-15T12:29:32.593Z",
+      "success": true,
+      "status": 200,
+      "data": {
+        "resourceType": "Bundle",
+        "type": "searchset",
+        "link": [
+          {
+            "relation": "self",
+            "url": "https://fhir.ovok.com/fhir/R4/QuestionnaireResponse?_count=20"
+          }
+        ]
+      },
+      "headers": {
+        "date": "Sat, 15 Nov 2025 12:29:32 GMT",
+        "content-type": "application/fhir+json; charset=utf-8",
+        "content-length": "143",
+        "connection": "keep-alive",
+        "x-powered-by": "Express",
+        "access-control-allow-origin": "https://api.ovok.com",
+        "vary": "Accept-Encoding",
+        "access-control-allow-credentials": "true",
+        "x-ovok-git-commit-hash": "fd83396",
+        "x-ovok-version": "2025.10.21",
+        "x-ovok-build-date": "2025-10-21T15:05:11Z",
+        "x-ovok-running-since": "2025-11-12T15:14:51.112Z",
+        "x-request-id": "0587f3e7-a8b9-4b19-9ac4-3c10d618a961",
+        "x-trace-id": "02bc5c07-07aa-4c38-a5c2-0385fc3f84bb",
+        "x-ratelimit-limit": "1000",
+        "x-ratelimit-remaining": "996",
+        "x-ratelimit-reset": "1763239772",
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "pragma": "no-cache",
+        "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+        "content-security-policy": "default-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none';",
+        "permissions-policy": "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=(), interest-cohort=()",
+        "referrer-policy": "no-referrer",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-xss-protection": "1; mode=block",
+        "ratelimit": "\"requests\";r=59890;t=12, \"fhirInteractions\";r=49859;t=56",
+        "etag": "W/\"8f-GGE58MfxIQtYwD4AN4evvSvwJ8g\""
+      }
+    },
+    {
+      "name": "GET /fhir/CarePlan",
+      "timestamp": "2025-11-15T12:29:33.735Z",
+      "success": true,
+      "status": 200,
+      "data": {
+        "resourceType": "Bundle",
+        "type": "searchset",
+        "link": [
+          {
+            "relation": "self",
+            "url": "https://fhir.ovok.com/fhir/R4/CarePlan?_count=20"
+          }
+        ]
+      },
+      "headers": {
+        "date": "Sat, 15 Nov 2025 12:29:33 GMT",
+        "content-type": "application/fhir+json; charset=utf-8",
+        "content-length": "130",
+        "connection": "keep-alive",
+        "x-powered-by": "Express",
+        "access-control-allow-origin": "https://api.ovok.com",
+        "vary": "Accept-Encoding",
+        "access-control-allow-credentials": "true",
+        "x-ovok-git-commit-hash": "fd83396",
+        "x-ovok-version": "2025.10.21",
+        "x-ovok-build-date": "2025-10-21T15:05:11Z",
+        "x-ovok-running-since": "2025-11-12T15:14:51.112Z",
+        "x-request-id": "543bbd55-15b3-4a3c-9076-a34941448e06",
+        "x-trace-id": "a7dd2429-ffb5-484a-aed6-6aaf2510aa3a",
+        "x-ratelimit-limit": "1000",
+        "x-ratelimit-remaining": "995",
+        "x-ratelimit-reset": "1763239773",
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "pragma": "no-cache",
+        "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+        "content-security-policy": "default-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none';",
+        "permissions-policy": "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=(), interest-cohort=()",
+        "referrer-policy": "no-referrer",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-xss-protection": "1; mode=block",
+        "ratelimit": "\"requests\";r=59881;t=11, \"fhirInteractions\";r=49839;t=55",
+        "etag": "W/\"82-GcupB2/DlZSuPLDLM8mNEs6zmFU\""
+      }
+    },
+    {
+      "name": "GET /fhir/Condition",
+      "timestamp": "2025-11-15T12:29:34.603Z",
+      "success": true,
+      "status": 200,
+      "data": {
+        "resourceType": "Bundle",
+        "type": "searchset",
+        "link": [
+          {
+            "relation": "self",
+            "url": "https://fhir.ovok.com/fhir/R4/Condition?_count=20"
+          }
+        ]
+      },
+      "headers": {
+        "date": "Sat, 15 Nov 2025 12:29:34 GMT",
+        "content-type": "application/fhir+json; charset=utf-8",
+        "content-length": "131",
+        "connection": "keep-alive",
+        "x-powered-by": "Express",
+        "access-control-allow-origin": "https://api.ovok.com",
+        "vary": "Accept-Encoding",
+        "access-control-allow-credentials": "true",
+        "x-ovok-git-commit-hash": "fd83396",
+        "x-ovok-version": "2025.10.21",
+        "x-ovok-build-date": "2025-10-21T15:05:11Z",
+        "x-ovok-running-since": "2025-11-12T15:14:51.112Z",
+        "x-request-id": "3fc8817b-fb7d-4445-91a1-f6ad3c986f22",
+        "x-trace-id": "34119b9b-1192-4712-ad6e-6fcd0bd531fd",
+        "x-ratelimit-limit": "1000",
+        "x-ratelimit-remaining": "994",
+        "x-ratelimit-reset": "1763239774",
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "pragma": "no-cache",
+        "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+        "content-security-policy": "default-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none';",
+        "permissions-policy": "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=(), interest-cohort=()",
+        "referrer-policy": "no-referrer",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-xss-protection": "1; mode=block",
+        "ratelimit": "\"requests\";r=59871;t=10, \"fhirInteractions\";r=49819;t=54",
+        "etag": "W/\"83-T/rqZgrO/xWowExNZcEdlqQ+uf8\""
+      }
+    },
+    {
+      "name": "GET /fhir/ServiceRequest",
+      "timestamp": "2025-11-15T12:29:35.157Z",
+      "success": true,
+      "status": 200,
+      "data": {
+        "resourceType": "Bundle",
+        "type": "searchset",
+        "link": [
+          {
+            "relation": "self",
+            "url": "https://fhir.ovok.com/fhir/R4/ServiceRequest?_count=20"
+          }
+        ]
+      },
+      "headers": {
+        "date": "Sat, 15 Nov 2025 12:29:35 GMT",
+        "content-type": "application/fhir+json; charset=utf-8",
+        "content-length": "136",
+        "connection": "keep-alive",
+        "x-powered-by": "Express",
+        "access-control-allow-origin": "https://api.ovok.com",
+        "vary": "Accept-Encoding",
+        "access-control-allow-credentials": "true",
+        "x-ovok-git-commit-hash": "fd83396",
+        "x-ovok-version": "2025.10.21",
+        "x-ovok-build-date": "2025-10-21T15:05:11Z",
+        "x-ovok-running-since": "2025-11-12T15:14:51.404Z",
+        "x-request-id": "eb3287b4-b1b6-4642-b0a9-da047c1d2ca8",
+        "x-trace-id": "45cd778c-4b27-49e9-8af4-fa570f559d92",
+        "x-ratelimit-limit": "1000",
+        "x-ratelimit-remaining": "996",
+        "x-ratelimit-reset": "1763239775",
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "pragma": "no-cache",
+        "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+        "content-security-policy": "default-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none';",
+        "permissions-policy": "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=(), interest-cohort=()",
+        "referrer-policy": "no-referrer",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-xss-protection": "1; mode=block",
+        "ratelimit": "\"requests\";r=59862;t=9, \"fhirInteractions\";r=49799;t=54",
+        "etag": "W/\"88-sQ2HCXawWnUGGdjfvprmO06Oojk\""
+      }
+    },
+    {
+      "name": "GET /fhir/DiagnosticReport",
+      "timestamp": "2025-11-15T12:29:35.700Z",
+      "success": true,
+      "status": 200,
+      "data": {
+        "resourceType": "Bundle",
+        "type": "searchset",
+        "link": [
+          {
+            "relation": "self",
+            "url": "https://fhir.ovok.com/fhir/R4/DiagnosticReport?_count=20"
+          }
+        ]
+      },
+      "headers": {
+        "date": "Sat, 15 Nov 2025 12:29:35 GMT",
+        "content-type": "application/fhir+json; charset=utf-8",
+        "content-length": "138",
+        "connection": "keep-alive",
+        "x-powered-by": "Express",
+        "access-control-allow-origin": "https://api.ovok.com",
+        "vary": "Accept-Encoding",
+        "access-control-allow-credentials": "true",
+        "x-ovok-git-commit-hash": "fd83396",
+        "x-ovok-version": "2025.10.21",
+        "x-ovok-build-date": "2025-10-21T15:05:11Z",
+        "x-ovok-running-since": "2025-11-12T15:14:51.112Z",
+        "x-request-id": "ade451e3-b9a9-461e-ac0d-52ba9bc499ba",
+        "x-trace-id": "81e2b54d-f660-4853-ba20-69dd7edd2625",
+        "x-ratelimit-limit": "1000",
+        "x-ratelimit-remaining": "993",
+        "x-ratelimit-reset": "1763239775",
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "pragma": "no-cache",
+        "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+        "content-security-policy": "default-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none';",
+        "permissions-policy": "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=(), interest-cohort=()",
+        "referrer-policy": "no-referrer",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-xss-protection": "1; mode=block",
+        "ratelimit": "\"requests\";r=59860;t=9, \"fhirInteractions\";r=49779;t=53",
+        "etag": "W/\"8a-DTpbjKRNPWNr9ljZSyqc5e2jIFI\""
+      }
+    },
+    {
+      "name": "POST /fhir/Patient",
+      "timestamp": "2025-11-15T12:29:36.273Z",
+      "success": true,
+      "status": 201,
+      "data": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "given": [
+              "Test"
+            ],
+            "family": "Patient"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1990-01-01",
+        "id": "019a877e-0c6f-72a9-9d85-3b4c16b56042",
+        "meta": {
+          "versionId": "019a877e-0c70-7060-ab7c-70fcb4f6c906",
+          "lastUpdated": "2025-11-15T12:29:36.240Z"
+        }
+      },
+      "headers": {
+        "date": "Sat, 15 Nov 2025 12:29:36 GMT",
+        "content-type": "application/fhir+json; charset=utf-8",
+        "content-length": "259",
+        "connection": "keep-alive",
+        "x-powered-by": "Express",
+        "access-control-allow-origin": "https://api.ovok.com",
+        "vary": "Accept-Encoding",
+        "access-control-allow-credentials": "true",
+        "x-ovok-git-commit-hash": "fd83396",
+        "x-ovok-version": "2025.10.21",
+        "x-ovok-build-date": "2025-10-21T15:05:11Z",
+        "x-ovok-running-since": "2025-11-12T15:14:51.404Z",
+        "x-request-id": "e18f798a-6b3d-4cbd-a715-983a75b680c7",
+        "x-trace-id": "45ae94d5-82c0-43b6-a229-641f5e402d45",
+        "x-ratelimit-limit": "1000",
+        "x-ratelimit-remaining": "995",
+        "x-ratelimit-reset": "1763239776",
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "pragma": "no-cache",
+        "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+        "content-security-policy": "default-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none';",
+        "permissions-policy": "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=(), interest-cohort=()",
+        "referrer-policy": "no-referrer",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-xss-protection": "1; mode=block",
+        "ratelimit": "\"requests\";r=59859;t=8, \"fhirInteractions\";r=49678;t=53",
+        "etag": "W/\"019a877e-0c70-7060-ab7c-70fcb4f6c906\"",
+        "last-modified": "Sat, 15 Nov 2025 12:29:36 GMT",
+        "location": "https://fhir.ovok.com/fhir/R4/Patient/019a877e-0c6f-72a9-9d85-3b4c16b56042"
+      }
+    },
+    {
+      "name": "GET /fhir/Patient/019a877e-0c6f-72a9-9d85-3b4c16b56042",
+      "timestamp": "2025-11-15T12:29:36.324Z",
+      "success": true,
+      "status": 200,
+      "data": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "given": [
+              "Test"
+            ],
+            "family": "Patient"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1990-01-01",
+        "id": "019a877e-0c6f-72a9-9d85-3b4c16b56042",
+        "meta": {
+          "versionId": "019a877e-0c70-7060-ab7c-70fcb4f6c906",
+          "lastUpdated": "2025-11-15T12:29:36.240Z"
+        }
+      },
+      "headers": {
+        "date": "Sat, 15 Nov 2025 12:29:36 GMT",
+        "content-type": "application/fhir+json; charset=utf-8",
+        "content-length": "259",
+        "connection": "keep-alive",
+        "x-powered-by": "Express",
+        "access-control-allow-origin": "https://api.ovok.com",
+        "vary": "Accept-Encoding",
+        "access-control-allow-credentials": "true",
+        "x-ovok-git-commit-hash": "fd83396",
+        "x-ovok-version": "2025.10.21",
+        "x-ovok-build-date": "2025-10-21T15:05:11Z",
+        "x-ovok-running-since": "2025-11-12T15:14:51.404Z",
+        "x-request-id": "337c509a-5ab2-44e3-bee7-8dea385ea23a",
+        "x-trace-id": "ba0cf173-d485-4d7b-a365-5094b52c8524",
+        "x-ratelimit-limit": "1000",
+        "x-ratelimit-remaining": "994",
+        "x-ratelimit-reset": "1763239776",
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "pragma": "no-cache",
+        "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+        "content-security-policy": "default-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none';",
+        "permissions-policy": "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=(), interest-cohort=()",
+        "referrer-policy": "no-referrer",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-xss-protection": "1; mode=block",
+        "ratelimit": "\"requests\";r=59858;t=8, \"fhirInteractions\";r=49677;t=53",
+        "etag": "W/\"019a877e-0c70-7060-ab7c-70fcb4f6c906\"",
+        "last-modified": "Sat, 15 Nov 2025 12:29:36 GMT"
+      }
+    }
+  ],
+  "failed": [
+    {
+      "name": "POST /auth/login",
+      "timestamp": "2025-11-15T12:29:17.587Z",
+      "success": false,
+      "status": 400,
+      "error": "Request failed with status code 400",
+      "data": {
+        "statusCode": 400,
+        "error": "Bad Request",
+        "timestamp": "2025-11-15T12:29:17.581Z",
+        "path": "/auth/login",
+        "message": "Provided client ID is invalid.",
+        "requestId": "d3b4ee31-5c78-425c-a722-ce140eacd7ee"
+      },
+      "headers": {
+        "date": "Sat, 15 Nov 2025 12:29:17 GMT",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "194",
+        "connection": "keep-alive",
+        "x-powered-by": "Express",
+        "access-control-allow-origin": "https://api.ovok.com",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "x-ovok-git-commit-hash": "fd83396",
+        "x-ovok-version": "2025.10.21",
+        "x-ovok-build-date": "2025-10-21T15:05:11Z",
+        "x-ovok-running-since": "2025-11-12T15:14:51.404Z",
+        "x-request-id": "d3b4ee31-5c78-425c-a722-ce140eacd7ee",
+        "x-trace-id": "cc405829-cc90-400e-9109-4fc8bf4238c5",
+        "x-ratelimit-limit": "1000",
+        "x-ratelimit-remaining": "996",
+        "x-ratelimit-reset": "1763269757",
+        "deprecated": "2024-10-18T00:00:00.000Z",
+        "sunset": "2025-03-01T00:00:00.000Z",
+        "link": "<https://docs.ovok.com>; rel=\"deprecation\"; type=\"text/html\"",
+        "etag": "W/\"c2-TkmUSEOi29CXJzdD61o2oC1XUA4\""
+      }
+    },
+    {
+      "name": "POST /auth/tenant/Practitioner/exchange-token",
+      "timestamp": "2025-11-15T12:29:22.231Z",
+      "success": false,
+      "status": 404,
+      "error": "Request failed with status code 404",
+      "data": {
+        "statusCode": 404,
+        "error": "Not Found",
+        "timestamp": "2025-11-15T12:29:22.225Z",
+        "path": "/auth/tenant/Practitioner/exchange-token",
+        "message": "Cannot POST /auth/tenant/Practitioner/exchange-token",
+        "requestId": "1c03624f-b175-420d-a6ed-95a2a8af15a2"
+      },
+      "headers": {
+        "date": "Sat, 15 Nov 2025 12:29:22 GMT",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "243",
+        "connection": "keep-alive",
+        "x-powered-by": "Express",
+        "access-control-allow-origin": "https://api.ovok.com",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "x-ovok-git-commit-hash": "fd83396",
+        "x-ovok-version": "2025.10.21",
+        "x-ovok-build-date": "2025-10-21T15:05:11Z",
+        "x-ovok-running-since": "2025-11-12T15:14:51.404Z",
+        "x-request-id": "1c03624f-b175-420d-a6ed-95a2a8af15a2",
+        "x-trace-id": "f002cf1d-0c6b-4efa-aede-90e0de6e34d4",
+        "etag": "W/\"f3-IGRO4S6ISPoFBrsjLI2d1DLUR3g\""
+      }
+    },
+    {
+      "name": "POST /auth/tenant/Patient/login/start (with PKCE, no tenantCode)",
+      "timestamp": "2025-11-15T12:29:24.256Z",
+      "success": false,
+      "status": 422,
+      "error": "Request failed with status code 422",
+      "data": {
+        "statusCode": 422,
+        "error": "Unprocessable Entity",
+        "timestamp": "2025-11-15T12:29:24.250Z",
+        "path": "/auth/tenant/Patient/login/start",
+        "message": [
+          {
+            "path": [
+              "tenantCode"
+            ],
+            "message": "Required"
+          }
+        ],
+        "requestId": "5133d31a-f9a4-4d04-b4ae-49ffadd32c8a"
+      },
+      "headers": {
+        "date": "Sat, 15 Nov 2025 12:29:24 GMT",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "238",
+        "connection": "keep-alive",
+        "x-powered-by": "Express",
+        "access-control-allow-origin": "https://api.ovok.com",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "x-ovok-git-commit-hash": "fd83396",
+        "x-ovok-version": "2025.10.21",
+        "x-ovok-build-date": "2025-10-21T15:05:11Z",
+        "x-ovok-running-since": "2025-11-12T15:14:51.112Z",
+        "x-request-id": "5133d31a-f9a4-4d04-b4ae-49ffadd32c8a",
+        "x-trace-id": "3c0cdace-4a2f-435e-9e94-39fde387e407",
+        "x-ratelimit-limit": "1000",
+        "x-ratelimit-remaining": "997",
+        "x-ratelimit-reset": "1763269763",
+        "etag": "W/\"ee-Pf5GPm9oKIYOwGwq4iyk7wIMoP8\""
+      }
+    },
+    {
+      "name": "POST /auth/tenant/Patient/login/start (with PKCE and tenantCode)",
+      "timestamp": "2025-11-15T12:29:25.340Z",
+      "success": false,
+      "status": 404,
+      "error": "Request failed with status code 404",
+      "data": {
+        "statusCode": 404,
+        "error": "Not Found",
+        "timestamp": "2025-11-15T12:29:25.274Z",
+        "path": "/auth/tenant/Patient/login/start",
+        "message": "Tenant not found.",
+        "requestId": "d2938f84-62a9-4bb0-a781-12773c1fbfb8"
+      },
+      "headers": {
+        "date": "Sat, 15 Nov 2025 12:29:25 GMT",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "200",
+        "connection": "keep-alive",
+        "x-powered-by": "Express",
+        "access-control-allow-origin": "https://api.ovok.com",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "x-ovok-git-commit-hash": "fd83396",
+        "x-ovok-version": "2025.10.21",
+        "x-ovok-build-date": "2025-10-21T15:05:11Z",
+        "x-ovok-running-since": "2025-11-12T15:14:51.404Z",
+        "x-request-id": "d2938f84-62a9-4bb0-a781-12773c1fbfb8",
+        "x-trace-id": "0c056fbb-1c9e-4bb8-a209-ff21fc73093e",
+        "x-ratelimit-limit": "1000",
+        "x-ratelimit-remaining": "997",
+        "x-ratelimit-reset": "1763269764",
+        "etag": "W/\"c8-0j6cnPaD2DwwmHJ0itlBGa1fhfI\""
+      }
+    },
+    {
+      "name": "GET /documents/search",
+      "timestamp": "2025-11-15T12:29:37.354Z",
+      "success": false,
+      "status": 404,
+      "error": "Request failed with status code 404",
+      "data": {
+        "statusCode": 404,
+        "error": "Not Found",
+        "timestamp": "2025-11-15T12:29:37.342Z",
+        "path": "/documents/search",
+        "message": "Cannot GET /documents/search",
+        "requestId": "e9dea6c5-2901-4828-9252-45e5753bf704"
+      },
+      "headers": {
+        "date": "Sat, 15 Nov 2025 12:29:37 GMT",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "196",
+        "connection": "keep-alive",
+        "x-powered-by": "Express",
+        "access-control-allow-origin": "https://api.ovok.com",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "x-ovok-git-commit-hash": "fd83396",
+        "x-ovok-version": "2025.10.21",
+        "x-ovok-build-date": "2025-10-21T15:05:11Z",
+        "x-ovok-running-since": "2025-11-12T15:14:51.112Z",
+        "x-request-id": "e9dea6c5-2901-4828-9252-45e5753bf704",
+        "x-trace-id": "4c7aa0cc-3c9d-4e61-8271-ed43acce2e82",
+        "etag": "W/\"c4-BK/ZS0nB+zkk+FgBoKx/ljiGWMk\""
+      }
+    },
+    {
+      "name": "GET /cms/content/search",
+      "timestamp": "2025-11-15T12:29:37.887Z",
+      "success": false,
+      "status": 422,
+      "error": "Request failed with status code 422",
+      "data": {
+        "statusCode": 422,
+        "error": "Unprocessable Entity",
+        "timestamp": "2025-11-15T12:29:37.881Z",
+        "path": "/cms/content/search",
+        "message": [
+          {
+            "path": [
+              "type"
+            ],
+            "message": "Invalid enum value. Expected 'blog' | 'video' | 'audio' | 'template' | 'export-template', received 'content'"
+          },
+          {
+            "path": [
+              "language"
+            ],
+            "message": "Invalid enum value. Expected 'Cy-az-AZ' | 'Cy-sr-SP' | 'Cy-uz-UZ' | 'Lt-az-AZ' | 'Lt-sr-SP' | 'Lt-uz-UZ' | 'aa' | 'ab' | 'ae' | 'af' | 'af-ZA' | 'ak' | 'am' | 'an' | 'ar' | 'ar-AE' | 'ar-BH' | 'ar-DZ' | 'ar-EG' | 'ar-IQ' | 'ar-JO' | 'ar-KW' | 'ar-LB' | 'ar-LY' | 'ar-MA' | 'ar-OM' | 'ar-QA' | 'ar-SA' | 'ar-SY' | 'ar-TN' | 'ar-YE' | 'as' | 'av' | 'ay' | 'az' | 'ba' | 'be' | 'be-BY' | 'bg' | 'bg-BG' | 'bh' | 'bi' | 'bm' | 'bn' | 'bo' | 'br' | 'bs' | 'ca' | 'ca-ES' | 'ce' | 'ch' | 'co' | 'cr' | 'cs' | 'cs-CZ' | 'cu' | 'cv' | 'cy' | 'da' | 'da-DK' | 'de' | 'de-AT' | 'de-CH' | 'de-DE' | 'de-LI' | 'de-LU' | 'div-MV' | 'dv' | 'dz' | 'ee' | 'el' | 'el-GR' | 'en' | 'en-AU' | 'en-BZ' | 'en-CA' | 'en-CB' | 'en-GB' | 'en-IE' | 'en-JM' | 'en-NZ' | 'en-PH' | 'en-TT' | 'en-US' | 'en-ZA' | 'en-ZW' | 'eo' | 'es' | 'es-AR' | 'es-BO' | 'es-CL' | 'es-CO' | 'es-CR' | 'es-DO' | 'es-EC' | 'es-ES' | 'es-GT' | 'es-HN' | 'es-MX' | 'es-NI' | 'es-PA' | 'es-PE' | 'es-PR' | 'es-PY' | 'es-SV' | 'es-UY' | 'es-VE' | 'et' | 'et-EE' | 'eu' | 'eu-ES' | 'fa' | 'fa-IR' | 'ff' | 'fi' | 'fi-FI' | 'fj' | 'fo' | 'fo-FO' | 'fr' | 'fr-BE' | 'fr-CA' | 'fr-CH' | 'fr-FR' | 'fr-LU' | 'fr-MC' | 'fy' | 'ga' | 'gd' | 'gl' | 'gl-ES' | 'gn' | 'gu' | 'gu-IN' | 'gv' | 'ha' | 'he' | 'he-IL' | 'hi' | 'hi-IN' | 'ho' | 'hr' | 'hr-HR' | 'ht' | 'hu' | 'hu-HU' | 'hy' | 'hy-AM' | 'hz' | 'ia' | 'id' | 'id-ID' | 'ie' | 'ig' | 'ii' | 'ik' | 'io' | 'is' | 'is-IS' | 'it' | 'it-CH' | 'it-IT' | 'iu' | 'ja' | 'ja-JP' | 'jv' | 'ka' | 'ka-GE' | 'kg' | 'ki' | 'kj' | 'kk' | 'kk-KZ' | 'kl' | 'km' | 'kn' | 'kn-IN' | 'ko' | 'ko-KR' | 'kr' | 'ks' | 'ku' | 'kv' | 'kw' | 'ky' | 'ky-KZ' | 'la' | 'lb' | 'lg' | 'li' | 'ln' | 'lo' | 'lt' | 'lt-LT' | 'lu' | 'lv' | 'lv-LV' | 'mg' | 'mh' | 'mi' | 'mk' | 'mk-MK' | 'ml' | 'mn' | 'mn-MN' | 'mr' | 'mr-IN' | 'ms' | 'ms-BN' | 'ms-MY' | 'mt' | 'my' | 'na' | 'nb' | 'nb-NO' | 'nd' | 'ne' | 'ng' | 'nl' | 'nl-BE' | 'nl-NL' | 'nn' | 'nn-NO' | 'no' | 'nr' | 'nv' | 'ny' | 'oc' | 'oj' | 'om' | 'or' | 'os' | 'pa' | 'pa-IN' | 'pi' | 'pl' | 'pl-PL' | 'ps' | 'pt' | 'pt-BR' | 'pt-PT' | 'qu' | 'rm' | 'rn' | 'ro' | 'ro-RO' | 'ru' | 'ru-RU' | 'rw' | 'sa' | 'sa-IN' | 'sc' | 'sd' | 'se' | 'sg' | 'si' | 'sk' | 'sk-SK' | 'sl' | 'sl-SI' | 'sm' | 'sn' | 'so' | 'sq' | 'sq-AL' | 'sr' | 'ss' | 'st' | 'su' | 'sv' | 'sv-FI' | 'sv-SE' | 'sw' | 'sw-KE' | 'ta' | 'ta-IN' | 'te' | 'te-IN' | 'tg' | 'th' | 'th-TH' | 'ti' | 'tk' | 'tl' | 'tn' | 'to' | 'tr' | 'tr-TR' | 'ts' | 'tt' | 'tt-RU' | 'tw' | 'ty' | 'ug' | 'uk' | 'uk-UA' | 'ur' | 'ur-PK' | 'uz' | 've' | 'vi' | 'vi-VN' | 'vo' | 'wa' | 'wo' | 'xh' | 'yi' | 'yo' | 'za' | 'zh' | 'zh-CHS' | 'zh-CHT' | 'zh-CN' | 'zh-HK' | 'zh-MO' | 'zh-SG' | 'zh-TW' | 'zu', received 'search'"
+          }
+        ],
+        "requestId": "2f7159d3-2375-46ee-9cb5-7360291c94b2"
+      },
+      "headers": {
+        "date": "Sat, 15 Nov 2025 12:29:37 GMT",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "3048",
+        "connection": "keep-alive",
+        "x-powered-by": "Express",
+        "access-control-allow-origin": "https://api.ovok.com",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "x-ovok-git-commit-hash": "fd83396",
+        "x-ovok-version": "2025.10.21",
+        "x-ovok-build-date": "2025-10-21T15:05:11Z",
+        "x-ovok-running-since": "2025-11-12T15:14:51.112Z",
+        "x-request-id": "2f7159d3-2375-46ee-9cb5-7360291c94b2",
+        "x-trace-id": "9125f2e6-4c0e-479e-b2ab-dc76098dd31b",
+        "x-ratelimit-limit": "1000",
+        "x-ratelimit-remaining": "999",
+        "x-ratelimit-reset": "1763239777",
+        "etag": "W/\"be8-U3cdpBnJ0vA/3yioBfWZ6m/cv2M\""
+      }
+    },
+    {
+      "name": "GET /localization/i18next/en",
+      "timestamp": "2025-11-15T12:29:38.549Z",
+      "success": false,
+      "status": 404,
+      "error": "Request failed with status code 404",
+      "data": {
+        "statusCode": 404,
+        "error": "Not Found",
+        "timestamp": "2025-11-15T12:29:38.544Z",
+        "path": "/localization/i18next/en",
+        "message": "Locale en not found",
+        "requestId": "54d4ae95-67a1-4a9e-b12d-4fb04b8c871e"
+      },
+      "headers": {
+        "date": "Sat, 15 Nov 2025 12:29:38 GMT",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "194",
+        "connection": "keep-alive",
+        "x-powered-by": "Express",
+        "access-control-allow-origin": "https://api.ovok.com",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "x-ovok-git-commit-hash": "fd83396",
+        "x-ovok-version": "2025.10.21",
+        "x-ovok-build-date": "2025-10-21T15:05:11Z",
+        "x-ovok-running-since": "2025-11-12T15:14:51.112Z",
+        "x-request-id": "54d4ae95-67a1-4a9e-b12d-4fb04b8c871e",
+        "x-trace-id": "c23a0ab3-af9f-49bb-b456-68c422b6fc56",
+        "x-ratelimit-limit": "1000",
+        "x-ratelimit-remaining": "999",
+        "x-ratelimit-reset": "1763239778",
+        "etag": "W/\"c2-JLnU6gomjgV/3kw8ZVGRvFfGHUU\""
+      }
+    },
+    {
+      "name": "POST /ai/translate",
+      "timestamp": "2025-11-15T12:29:39.106Z",
+      "success": false,
+      "status": 404,
+      "error": "Request failed with status code 404",
+      "data": {
+        "statusCode": 404,
+        "error": "Not Found",
+        "timestamp": "2025-11-15T12:29:39.101Z",
+        "path": "/ai/translate",
+        "message": "Cannot POST /ai/translate",
+        "requestId": "e795823f-1165-429c-839f-2983c2ad899d"
+      },
+      "headers": {
+        "date": "Sat, 15 Nov 2025 12:29:39 GMT",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "189",
+        "connection": "keep-alive",
+        "x-powered-by": "Express",
+        "access-control-allow-origin": "https://api.ovok.com",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "x-ovok-git-commit-hash": "fd83396",
+        "x-ovok-version": "2025.10.21",
+        "x-ovok-build-date": "2025-10-21T15:05:11Z",
+        "x-ovok-running-since": "2025-11-12T15:14:51.112Z",
+        "x-request-id": "e795823f-1165-429c-839f-2983c2ad899d",
+        "x-trace-id": "d09155a2-f003-43fa-bbe8-71aa6365ad6e",
+        "etag": "W/\"bd-rAV+YgVFEZU/KKr4YZsm5fF5Dgc\""
+      }
+    }
+  ],
+  "skipped": [],
+  "metadata": {
+    "codeVerifier": "XerJBMOvQWre9UsJHStFN-Lq3fbVqIqRyQ21NA8J5q8",
+    "tenantCode": "encodersoft",
+    "projectId": "019a785d-ac1a-76a8-bb78-48f65b227809",
+    "createdPatientId": "019a877e-0c6f-72a9-9d85-3b4c16b56042"
+  }
+}
