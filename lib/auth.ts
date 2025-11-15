@@ -204,6 +204,55 @@ export function isAuthenticated(): boolean {
 }
 
 /**
+ * Register a new practitioner account
+ */
+export async function registerPractitioner(
+  email: string,
+  password: string,
+  name: string,
+  surname: string,
+  clientId: string
+): Promise<any> {
+  if (!clientId) {
+    throw new Error('Client ID is required for registration. Please get your Client ID from the Ovok dashboard.');
+  }
+
+  const response = await fetch(`${BASE_URL}/auth/register`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    },
+    body: JSON.stringify({
+      email,
+      password,
+      name,
+      surname,
+      clientId,
+    }),
+  });
+
+  if (!response.ok) {
+    const error = await response.json();
+    throw new Error(error.message || `Registration failed: ${response.status}`);
+  }
+
+  const data = await response.json();
+  
+  // If tokens are provided, store them
+  if (typeof window !== 'undefined') {
+    if (data.accessToken || data.access_token) {
+      localStorage.setItem('accessToken', data.accessToken || data.access_token);
+    }
+    if (data.refreshToken || data.refresh_token) {
+      localStorage.setItem('refreshToken', data.refreshToken || data.refresh_token);
+    }
+  }
+
+  return data;
+}
+
+/**
  * Logout
  */
 export function logout(): void {

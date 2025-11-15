@@ -24,8 +24,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     { name: 'Dashboard', href: '/dashboard', icon: '📊' },
     { name: 'Patients', href: '/patients', icon: '👥' },
     { name: 'Appointments', href: '/appointments', icon: '📅' },
+    { name: 'Encounters', href: '/encounters', icon: '🏥' },
     { name: 'Observations', href: '/observations', icon: '📋' },
     { name: 'Questionnaires', href: '/questionnaires', icon: '📝' },
+    { name: 'Documents', href: '/documents', icon: '📁' },
   ]
 
   if (pathname === '/login') {
