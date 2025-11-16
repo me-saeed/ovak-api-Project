@@ -400,7 +400,7 @@ export default function DashboardPage() {
                             {status}
                           </span>
                           {carePlan.note && (() => {
-                            const goalCount = carePlan.note.filter(note => 
+                            const goalCount = carePlan.note.filter((note: { text?: string }) => 
                               note.text && note.text.match(/^Goal \d+:/i)
                             ).length
                             return goalCount > 0 ? (
