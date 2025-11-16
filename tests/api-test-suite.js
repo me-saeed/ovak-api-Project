@@ -10,9 +10,11 @@
 const axios = require('axios');
 
 const BASE_URL = 'https://api.ovok.com';
+// IMPORTANT: Replace with your own credentials for testing
+// DO NOT commit real credentials to the repository
 const TEST_CREDENTIALS = {
-  email: 'saeedartists@gmail.com',
-  password: '12345678'
+  email: process.env.TEST_EMAIL || 'your-email@example.com',
+  password: process.env.TEST_PASSWORD || 'your-password'
 };
 
 // Test results storage

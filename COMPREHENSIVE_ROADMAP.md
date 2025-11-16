@@ -2,7 +2,7 @@
 
 **Based on Systematic API Testing Results**  
 **Test Date:** November 15, 2025  
-**Test Credentials:** saeedartists@gmail.com
+**Test Credentials:** Use your own credentials (not included in repo)
 
 ---
 
@@ -45,8 +45,8 @@ const codeChallenge = crypto.createHash('sha256')
 // Step 1: Start Login
 POST https://api.ovok.com/auth/tenant/Practitioner/login/start
 {
-  "email": "saeedartists@gmail.com",
-  "password": "12345678",
+  "email": "your-email@example.com",
+  "password": "your-password",
   "codeChallenge": codeChallenge,
   "codeChallengeMethod": "S256"
 }
@@ -81,8 +81,8 @@ POST https://api.ovok.com/auth/tenant/Practitioner/login/token
 ```
 
 **Your Working Credentials:**
-- Email: `saeedartists@gmail.com`
-- Password: `12345678`
+- Email: `your-email@example.com`
+- Password: `your-password`
 - Tenant Code: `encodersoft`
 - Project ID: `019a785d-ac1a-76a8-bb78-48f65b227809`
 - Practitioner ID: `019a785d-b35f-76e0-94bc-ce23532634ce`

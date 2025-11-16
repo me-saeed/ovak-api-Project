@@ -41,8 +41,8 @@ const startRes = await fetch('https://api.ovok.com/auth/tenant/Practitioner/logi
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({
-    email: 'saeedartists@gmail.com',
-    password: '12345678',
+    email: 'your-email@example.com',
+    password: 'your-password',
     codeChallenge,
     codeChallengeMethod: 'S256'
   })
@@ -124,8 +124,8 @@ ovok-app/
 
 ## 🎯 Your Working Credentials
 
-- **Email:** saeedartists@gmail.com
-- **Password:** 12345678
+- **Email:** your-email@example.com
+- **Password:** your-password
 - **Tenant Code:** encodersoft
 - **Project ID:** 019a785d-ac1a-76a8-bb78-48f65b227809
 

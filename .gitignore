@@ -29,8 +29,15 @@ yarn-error.log*
 # vercel
 .vercel
 
+# netlify
+.netlify
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# test results (may contain sensitive data)
+tests/test-results.json
+tests/bug-reports.json
 
 

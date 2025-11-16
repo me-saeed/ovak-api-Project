@@ -41,7 +41,7 @@
               "telecom": [
                 {
                   "system": "email",
-                  "value": "saeedartists@gmail.com",
+                  "value": "[REDACTED - Email removed for privacy]",
                   "use": "work"
                 }
               ],
@@ -91,8 +91,8 @@
       "success": true,
       "status": 201,
       "data": {
-        "accessToken": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjAxM2IxZWZiLWFiZGQtNDAxNS05MTA0LTgwODQyMTY3ZDllOSIsInR5cCI6IkpXVCJ9.eyJsb2dpbl9pZCI6IjAxOWE4NzdkLWM4NmYtNzU5Yy04ZTlkLTRkNmIxNDA1MzRiNCIsInN1YiI6IjAxOWE3ODVkLWI0NDMtNzMxNi1iOTc0LTkzOTBjMTY1ZTUwMiIsInVzZXJuYW1lIjoiMDE5YTc4NWQtYjQ0My03MzE2LWI5NzQtOTM5MGMxNjVlNTAyIiwic2NvcGUiOiJvcGVuaWQiLCJwcm9maWxlIjoiUHJhY3RpdGlvbmVyLzAxOWE3ODVkLWIzNWYtNzZlMC05NGJjLWNlMjM1MzI2MzRjZSIsImlhdCI6MTc2MzIwOTc2MSwiaXNzIjoiaHR0cHM6Ly9maGlyLm92b2suY29tLyIsImV4cCI6MTc2MzIxMzM2MX0.c2YIY1TizcXBxluG_WESAzBwtJYkBov0SObuZ4B9j_lQWdhwOs2Ew4mUNsh7nf1lOy1LXVI7yVokYdgur-YoW8-KmzedVv7t0TbKHpOakwzupgFRPUOuUckv5Tj75zC_ClTfTT0ctjAH25CDuv75XNK7KIHt_wp31oVwyI2qh38Vb60dMP81tbCQ_LjXchjycPTP-Jbx2AlIlh896hepzbzgqFGXpwMqN8GkkAMw74wLSdxlN4EazCl7i7zwVa4zjWektHoy4FB3YIh7vH3TwpFpV098z2FpR8-K4Drv4ZeiJQMhhfZQ7cemUOvHeiQmnqhAIKmqiSU7PFPdDc5JqQ",
-        "refreshToken": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjAxM2IxZWZiLWFiZGQtNDAxNS05MTA0LTgwODQyMTY3ZDllOSIsInR5cCI6IkpXVCJ9.eyJsb2dpbl9pZCI6IjAxOWE4NzdkLWM4NmYtNzU5Yy04ZTlkLTRkNmIxNDA1MzRiNCIsInJlZnJlc2hfc2VjcmV0IjoiYzA4bTkzdzE0a3hsMm03M3d3dHNvbXRmN3d2d3dsc3pwbzVkcDVlbzM0NjVyYmpoY29yNWswZGZiZDl5OW5raCIsImlhdCI6MTc2MzIwOTc2MSwiaXNzIjoiaHR0cHM6Ly9maGlyLm92b2suY29tLyIsImV4cCI6MTc2NDQxOTM2MX0.C2W_HgG_M-lyZrIQ1EIPT8Z39fBM1-xhizgisc1q7wQqDIDdnRayhtpjQcOKg9pdkBZasd6Two7DllmGd0NdybxBkhu37YlMzDIOSbqPOodMOS3iN4eAsoAckgRTcH4PvgAPwy5cIhbHkvRSC9UlVNw0DeQT-C6TZkjfQBhT7VsYOYrwAcQVN1V1txj8FbOXoPtyhG2cIIbsrlOj0OSh0baFgv0ji6aJPR_xEfFBgT72EzQNV-fT6rNEyRmKVGdgXycvh5-EJylKYLoP78iqyDgz_3zjzCiSCbSlcdl18UghuBpHUfd_T2b2K0DLFkmWObtX4PWx38_izMTfDHwRqw",
+        "accessToken": "[REDACTED - Token removed for security]",
+        "refreshToken": "[REDACTED - Token removed for security]",
         "project": {
           "reference": "Project/019a785d-ac1a-76a8-bb78-48f65b227809",
           "display": "encodersoft"
@@ -197,7 +197,7 @@
               "telecom": [
                 {
                   "system": "email",
-                  "value": "saeedartists@gmail.com",
+                  "value": "[REDACTED - Email removed for privacy]",
                   "use": "work"
                 }
               ],
