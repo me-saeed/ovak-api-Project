@@ -12,6 +12,7 @@ export interface DashboardStats {
   totalEncounters: number;
   totalConditions: number;
   totalCarePlans: number;
+  totalServiceRequests: number;
   totalQuestionnaires: number;
   totalDocuments: number;
   recentPatients: any[];
@@ -20,6 +21,7 @@ export interface DashboardStats {
   recentEncounters: any[];
   recentConditions: any[];
   recentCarePlans: any[];
+  recentServiceRequests: any[];
   recentQuestionnaires: any[];
   recentDocuments: any[];
 }
@@ -38,6 +40,7 @@ export const dashboardService = {
         encountersRes,
         conditionsRes,
         carePlansRes,
+        serviceRequestsRes,
         questionnairesRes,
         documentsRes,
       ] = await Promise.all([
@@ -47,6 +50,7 @@ export const dashboardService = {
         apiClient.get('/fhir/Encounter?_count=1&_total=accurate').catch(() => ({ data: { total: 0 } })),
         apiClient.get('/fhir/Condition?_count=1&_total=accurate').catch(() => ({ data: { total: 0 } })),
         apiClient.get('/fhir/CarePlan?_count=1&_total=accurate').catch(() => ({ data: { total: 0 } })),
+        apiClient.get('/fhir/ServiceRequest?_count=1&_total=accurate').catch(() => ({ data: { total: 0 } })),
         apiClient.get('/fhir/Questionnaire?_count=1&_total=accurate').catch(() => ({ data: { total: 0 } })),
         apiClient.get('/fhir/DocumentReference?_count=1&_total=accurate').catch(() => ({ data: { total: 0 } })),
       ]);
@@ -59,6 +63,7 @@ export const dashboardService = {
         recentEncountersRes,
         recentConditionsRes,
         recentCarePlansRes,
+        recentServiceRequestsRes,
         recentQuestionnairesRes,
         recentDocumentsRes,
       ] = await Promise.all([
@@ -68,6 +73,7 @@ export const dashboardService = {
         apiClient.get('/fhir/Encounter?_count=5&_sort=-_lastUpdated').catch(() => ({ data: { entry: [] } })),
         apiClient.get('/fhir/Condition?_count=5&_sort=-_lastUpdated').catch(() => ({ data: { entry: [] } })),
         apiClient.get('/fhir/CarePlan?_count=5&_sort=-_lastUpdated').catch(() => ({ data: { entry: [] } })),
+        apiClient.get('/fhir/ServiceRequest?_count=5&_sort=-_lastUpdated').catch(() => ({ data: { entry: [] } })),
         apiClient.get('/fhir/Questionnaire?_count=5&_sort=-_lastUpdated').catch(() => ({ data: { entry: [] } })),
         apiClient.get('/fhir/DocumentReference?_count=5&_sort=-_lastUpdated').catch(() => ({ data: { entry: [] } })),
       ]);
@@ -79,6 +85,7 @@ export const dashboardService = {
         totalEncounters: encountersRes.data.total || 0,
         totalConditions: conditionsRes.data.total || 0,
         totalCarePlans: carePlansRes.data.total || 0,
+        totalServiceRequests: serviceRequestsRes.data.total || 0,
         totalQuestionnaires: questionnairesRes.data.total || 0,
         totalDocuments: documentsRes.data.total || 0,
         recentPatients: recentPatientsRes.data.entry?.map((entry: any) => entry.resource) || [],
@@ -87,6 +94,7 @@ export const dashboardService = {
         recentEncounters: recentEncountersRes.data.entry?.map((entry: any) => entry.resource) || [],
         recentConditions: recentConditionsRes.data.entry?.map((entry: any) => entry.resource) || [],
         recentCarePlans: recentCarePlansRes.data.entry?.map((entry: any) => entry.resource) || [],
+        recentServiceRequests: recentServiceRequestsRes.data.entry?.map((entry: any) => entry.resource) || [],
         recentQuestionnaires: recentQuestionnairesRes.data.entry?.map((entry: any) => entry.resource) || [],
         recentDocuments: recentDocumentsRes.data.entry?.map((entry: any) => entry.resource) || [],
       };
@@ -99,6 +107,7 @@ export const dashboardService = {
         totalEncounters: 0,
         totalConditions: 0,
         totalCarePlans: 0,
+        totalServiceRequests: 0,
         totalQuestionnaires: 0,
         totalDocuments: 0,
         recentPatients: [],
@@ -107,6 +116,7 @@ export const dashboardService = {
         recentEncounters: [],
         recentConditions: [],
         recentCarePlans: [],
+        recentServiceRequests: [],
         recentQuestionnaires: [],
         recentDocuments: [],
       };

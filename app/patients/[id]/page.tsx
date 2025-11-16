@@ -11,6 +11,7 @@ import { encounterService, Encounter } from '@/lib/services/encounter-service'
 import { documentService, DocumentReference } from '@/lib/services/document-service'
 import { conditionService, Condition } from '@/lib/services/condition-service'
 import { carePlanService, CarePlan } from '@/lib/services/careplan-service'
+import { serviceRequestService, ServiceRequest } from '@/lib/services/servicerequest-service'
 
 export default function PatientDetailPage() {
   const params = useParams()
@@ -25,6 +26,7 @@ export default function PatientDetailPage() {
   const [documents, setDocuments] = useState<DocumentReference[]>([])
   const [conditions, setConditions] = useState<Condition[]>([])
   const [carePlans, setCarePlans] = useState<CarePlan[]>([])
+  const [serviceRequests, setServiceRequests] = useState<ServiceRequest[]>([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -37,6 +39,7 @@ export default function PatientDetailPage() {
       loadDocuments()
       loadConditions()
       loadCarePlans()
+      loadServiceRequests()
     }
   }, [patientId])
 
@@ -111,6 +114,15 @@ export default function PatientDetailPage() {
       setCarePlans(data)
     } catch (error) {
       console.error('Error loading care plans:', error)
+    }
+  }
+
+  const loadServiceRequests = async () => {
+    try {
+      const data = await serviceRequestService.getByPatient(patientId)
+      setServiceRequests(data)
+    } catch (error) {
+      console.error('Error loading service requests:', error)
     }
   }
 
@@ -696,6 +708,98 @@ export default function PatientDetailPage() {
             className="mt-4 inline-block text-sm text-blue-600 hover:text-blue-700 font-medium"
           >
             View all care plans →
+          </Link>
+        </div>
+
+        {/* Service Requests */}
+        <div className="bg-white rounded-lg shadow-sm p-6">
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center gap-2">
+              <span className="text-2xl">🔬</span>
+              <h2 className="text-lg font-semibold text-gray-900">Service Requests</h2>
+            </div>
+            <Link
+              href={`/servicerequests/new?patientId=${patientId}`}
+              className="text-sm text-blue-600 hover:text-blue-700 font-medium flex items-center gap-1"
+            >
+              <span>➕</span> Create Service Request
+            </Link>
+          </div>
+          {serviceRequests.length > 0 ? (
+            <div className="space-y-3">
+              {serviceRequests.slice(0, 5).map((request) => {
+                const getStatusColor = (status?: string) => {
+                  switch (status?.toLowerCase()) {
+                    case 'active':
+                      return 'border-blue-500 bg-blue-50'
+                    case 'completed':
+                      return 'border-green-500 bg-green-50'
+                    case 'on-hold':
+                      return 'border-yellow-500 bg-yellow-50'
+                    case 'revoked':
+                      return 'border-red-500 bg-red-50'
+                    default:
+                      return 'border-gray-500 bg-gray-50'
+                  }
+                }
+                return (
+                  <Link
+                    key={request.id}
+                    href={`/servicerequests/${request.id}`}
+                    className={`block p-3 rounded-lg border-l-4 hover:opacity-80 transition ${getStatusColor(request.status)}`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-start gap-2 flex-1">
+                        <span className="text-lg mt-0.5">🔬</span>
+                        <div className="flex-1">
+                          <p className="text-sm font-medium text-gray-900">
+                            {request.code?.text || request.code?.coding?.[0]?.display || 'Service Request'}
+                          </p>
+                          <p className="text-xs text-gray-600 mt-1">
+                            <span className={`px-2 py-0.5 rounded text-xs font-medium ${
+                              request.status === 'active' ? 'bg-blue-100 text-blue-800' :
+                              request.status === 'completed' ? 'bg-green-100 text-green-800' :
+                              request.status === 'on-hold' ? 'bg-yellow-100 text-yellow-800' :
+                              request.status === 'revoked' ? 'bg-red-100 text-red-800' :
+                              'bg-gray-100 text-gray-800'
+                            }`}>
+                              {request.status || 'Unknown'}
+                            </span>
+                            {request.priority && (
+                              <span className={`ml-2 px-2 py-0.5 rounded text-xs font-medium ${
+                                request.priority === 'stat' ? 'bg-red-100 text-red-800' :
+                                request.priority === 'asap' ? 'bg-orange-100 text-orange-800' :
+                                request.priority === 'urgent' ? 'bg-yellow-100 text-yellow-800' :
+                                'bg-green-100 text-green-800'
+                              }`}>
+                                {request.priority.toUpperCase()}
+                              </span>
+                            )}
+                            {request.occurrenceDateTime && (
+                              <span className="ml-2">
+                                Scheduled: {new Date(request.occurrenceDateTime).toLocaleDateString()}
+                              </span>
+                            )}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-blue-600 text-xl">→</span>
+                    </div>
+                  </Link>
+                )
+              })}
+            </div>
+          ) : (
+            <div className="text-center py-6">
+              <span className="text-4xl block mb-2">🔬</span>
+              <p className="text-gray-500 text-sm">No service requests</p>
+            </div>
+          )}
+          <Link
+            href={`/servicerequests?patientId=${patientId}`}
+            className="mt-4 inline-block text-sm text-blue-600 hover:text-blue-700 font-medium"
+          >
+            View all service requests →
           </Link>
         </div>
       </div>

@@ -76,6 +76,13 @@ export default function DashboardPage() {
       href: '/careplans',
     },
     {
+      title: 'Service Requests',
+      value: stats.totalServiceRequests,
+      icon: '🔬',
+      color: 'bg-cyan-500',
+      href: '/servicerequests',
+    },
+    {
       title: 'Observations',
       value: stats.totalObservations,
       icon: '📋',
@@ -426,6 +433,88 @@ export default function DashboardPage() {
             className="mt-4 inline-block text-sm text-blue-600 hover:text-blue-700 font-medium"
           >
             View all care plans →
+          </Link>
+        </div>
+
+        {/* Recent Service Requests */}
+        <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="text-2xl">🔬</span>
+            <h2 className="text-lg font-semibold text-gray-900">Recent Service Requests</h2>
+          </div>
+          {stats.recentServiceRequests.length > 0 ? (
+            <div className="space-y-3">
+              {stats.recentServiceRequests.map((request: any) => {
+                const status = request.status || 'unknown'
+                const getStatusColor = (status: string) => {
+                  switch (status.toLowerCase()) {
+                    case 'active':
+                      return 'border-blue-500 bg-blue-50'
+                    case 'completed':
+                      return 'border-green-500 bg-green-50'
+                    case 'on-hold':
+                      return 'border-yellow-500 bg-yellow-50'
+                    case 'revoked':
+                      return 'border-red-500 bg-red-50'
+                    default:
+                      return 'border-gray-500 bg-gray-50'
+                  }
+                }
+                return (
+                  <Link
+                    key={request.id}
+                    href={`/servicerequests/${request.id}`}
+                    className={`block p-3 rounded-lg hover:opacity-80 transition border-l-4 ${getStatusColor(status)}`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <p className="font-medium text-gray-900 text-sm">
+                          {request.code?.text || request.code?.coding?.[0]?.display || 'Service Request'}
+                        </p>
+                        <p className="text-xs text-gray-600 mt-1">
+                          <span className={`px-2 py-0.5 rounded text-xs font-medium ${
+                            status === 'active' ? 'bg-blue-100 text-blue-800' :
+                            status === 'completed' ? 'bg-green-100 text-green-800' :
+                            status === 'on-hold' ? 'bg-yellow-100 text-yellow-800' :
+                            status === 'revoked' ? 'bg-red-100 text-red-800' :
+                            'bg-gray-100 text-gray-800'
+                          }`}>
+                            {status}
+                          </span>
+                          {request.priority && (
+                            <span className={`ml-2 px-2 py-0.5 rounded text-xs font-medium ${
+                              request.priority === 'stat' ? 'bg-red-100 text-red-800' :
+                              request.priority === 'asap' ? 'bg-orange-100 text-orange-800' :
+                              request.priority === 'urgent' ? 'bg-yellow-100 text-yellow-800' :
+                              'bg-green-100 text-green-800'
+                            }`}>
+                              {request.priority.toUpperCase()}
+                            </span>
+                          )}
+                          {request.occurrenceDateTime && (
+                            <span className="ml-2">
+                              Scheduled: {formatDate(request.occurrenceDateTime)}
+                            </span>
+                          )}
+                        </p>
+                      </div>
+                      <span className="text-cyan-600 text-xl">→</span>
+                    </div>
+                  </Link>
+                )
+              })}
+            </div>
+          ) : (
+            <div className="text-center py-6">
+              <span className="text-4xl block mb-2">📭</span>
+              <p className="text-gray-500 text-sm">No recent service requests</p>
+            </div>
+          )}
+          <Link
+            href="/servicerequests"
+            className="mt-4 inline-block text-sm text-blue-600 hover:text-blue-700 font-medium"
+          >
+            View all service requests →
           </Link>
         </div>
 
