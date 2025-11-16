@@ -157,7 +157,7 @@ export default function Part1_2_RefreshAccount() {
       <div className="p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
         <h4 className="font-medium text-yellow-900 mb-2">Testing Notes:</h4>
         <ul className="text-sm text-yellow-800 space-y-1 list-disc list-inside">
-          <li>Make sure you've logged in from Part 1.1 first</li>
+          <li>Make sure you&apos;ve logged in from Part 1.1 first</li>
           <li>Refresh token should return a new access token</li>
           <li>Account info should return your user details</li>
           <li>Test with expired tokens to see error handling</li>

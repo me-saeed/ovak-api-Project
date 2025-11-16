@@ -85,7 +85,7 @@ export default function AssignQuestionnairePage() {
     <div className="max-w-2xl">
       <h1 className="text-3xl font-bold text-gray-900 mb-2">Assign Questionnaire</h1>
       <p className="text-gray-600 mb-6">
-        Assign "{questionnaire.title || 'Untitled Questionnaire'}" to a patient
+        Assign &quot;{questionnaire.title || 'Untitled Questionnaire'}&quot; to a patient
       </p>
 
       <div className="bg-white rounded-lg shadow-sm p-6 space-y-6">

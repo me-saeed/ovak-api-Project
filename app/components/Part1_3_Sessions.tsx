@@ -157,7 +157,7 @@ export default function Part1_3_Sessions() {
           <li>Get sessions first to see all active sessions</li>
           <li>Try deleting a specific session by ID</li>
           <li>Try deleting all sessions (leave ID empty)</li>
-          <li>After deleting all sessions, you'll need to login again</li>
+          <li>After deleting all sessions, you&apos;ll need to login again</li>
         </ul>
       </div>
     </div>
